@@ -1,14 +1,21 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-        <h1>Message List</h1>
-        <div class="messages">
-            {% for message in messages %}
-              <div class="message">
-                <h2><a href="{% url 'messages2:detail' slug=message.slug %}">{{ message.title }}</a></h2>
-                <p>{{ message.snippet }}</p>
-                <p>{{ message.date }}</p>
-              </div>
-            {% endfor %}
-        </div>
+<h1>Message List</h1>
+<div class="messages">
+
+
+  <div class="message">
+    <h2>
+      <a href="{% url 'messages2:detail' slug=random_message.slug %}">{{ random_message.title }}</a>
+    </h2>
+    <p>{{ random_message.snippet }}</p>
+    <p>{{ random_message.date }}</p>
+  </div>
+  
+ 
+
+</div>
+
+<!-- </div> -->
 {% endblock %}

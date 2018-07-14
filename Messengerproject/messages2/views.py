@@ -4,10 +4,42 @@ from .models import Message
 from django.contrib.auth.decorators import login_required
 from .import forms
 
+import random
+# from django.db.models.aggregates import Count
+# from random import randint
+
+
+# def message_list2(request):
+#     count = self.aggregrate(count=Count('id'))['count']
+#     random_index = randint(0, count - 1)
+#     return self.all
+
+#     random.choice(Model.objects.all())
+
+
+# class message_random(models.Manager):
+#     def random(self):
+#         count = self.aggregate(count=Count('id'))['count']
+#         random_index = randint(0, count - 1)
+#         return self.all()[random_index]
+
+
+# def message_list(request):
+#     messages = random.choice(Message.objects.all())#.order_by('date')
+#     return render(request, 'messages/message_list.html', {'messages': messages})#, {'messages': messages})
+
 
 def message_list(request):
-    messages = Message.objects.all().order_by('date')
-    return render(request, 'messages/message_list.html', {'messages': messages})
+    messages = Message.objects.all()
+    random_message = random.choice(messages)
+    return render(request, 'messages/message_list.html', {'random_message': random_message})#{'random_message': random_message})
+
+#     items = Product.objects.all()
+
+# # change 3 to how many random items you want
+# random_items = random.sample(items, 3)
+# # if you want only a single random item
+# random_item = random.choice(items)
 
 
 def message_detail(request, slug):
