@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="message-detail">
+    <div class="message">
+        <!-- <img src="{{ article.thumb.url }}" /> -->
+        <h2>{{ message.title }}</h2>
+        <p>{{ message.body }}</p>
+        <p>{{ message.date }}</p>
+    </div>
+
+</div>
+
+
+{% endblock %}
