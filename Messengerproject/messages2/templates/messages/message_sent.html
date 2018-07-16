@@ -1,0 +1,24 @@
+{% extends 'base_layout.html' %} {% block content %}
+
+<div class="messages">
+    {% if user.is_authenticated %}
+    <h1>Messages that you sent:</h1>
+    <div class="message">
+        {% for message in user_messages %}
+        <h2>
+            <a href="{% url 'messages2:detail' slug=message.slug %}"></a>{{ message.title }}</a>
+        </h2>
+        <p>{{ message.snippet }}</p>
+        <p>{{ message.date }}</p>
+        <p>{{ message.author }}</p>
+    </div>
+    {% endfor %} 
+    {% else %}
+    <h2>Please Login to view your randomized message!</h2>
+    {% endif %}
+
+
+</div>
+
+
+{% endblock %}

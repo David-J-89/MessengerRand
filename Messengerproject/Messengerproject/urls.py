@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('messages/', include('messages2.urls')),
-    path('about/', views.about, name="about"),
-    path('', message_views.message_list, name="home"),
+    path('about/', views.about, name="about"),  
+    path('', message_views.message_featured, name="home"),
+   
 ]
